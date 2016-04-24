@@ -9,7 +9,7 @@ id const FCSkipSentinel = @"__FCSkipSentinel__";
 
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     for(__strong id obj in self) {
-        if((obj = blk(obj)) != FCSkipSentinel)
+        if((obj = blk(obj)) != FCSkipSentinel && nil != obj)
             [result addObject:obj];
     }
     return result;
